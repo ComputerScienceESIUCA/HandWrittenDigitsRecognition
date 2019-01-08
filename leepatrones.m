@@ -9,6 +9,7 @@ function elementos = leepatrones(I)
         bb = cuadrados(i).BoundingBox;
         rectangle('position',bb,'edgecolor','y');
         cuadro = imcrop(imagen_erosionada,bb);
-        elementos{i} = cuadro;
+        elementos{i}.patron = cuadro;
+        elementos{i}.clase = floor((i-1)/23); %Clase a la que pertenece el patron
     end
 end
